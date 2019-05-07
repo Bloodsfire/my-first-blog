@@ -1,12 +1,17 @@
-.page-header {
-    background-color: #ff9400;
-    margin-top: 0;
-    padding: 20px 20px 20px 40px;
+body {
+    background: #ffffff;
 }
 
+.page-header {
+    background-color: #11b6fb;
+    margin-top: 0px;
+    padding: 10px 20px 20px 40px;
+    text-shadow: 0 0 10px black;
+}
+/* #ff9400 */
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
-    font-size: 36pt;
+    font-size: 40pt;
     text-decoration: none;
 }
 
@@ -15,11 +20,15 @@
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Shadows', cursive;
 }
 
 .date {
-    color: #828282;
+    color: #4c4c4c;
+    text-align: right;
+    display: inline-block;
+    width: 100%;
+
 }
 
 .save {
@@ -34,17 +43,51 @@ h1, h2, h3, h4 {
     color: #ffffff;
     float: right;
     font-size: 26pt;
-    margin-right: 20px;
+    margin-right: 30px;
+    padding-top: 25px;
+}
+
+.top-menu a, .glyphicon-remove {
+    color: #ed0006;
+}
+
+.glyphicon-plus, .glyphicon-ok, .glyphicon-lock {
+    color: #7be211;
+}
+
+.glyphicon-edit, .glyphicon-pencil {
+    color: #ff9a06;
 }
 
 .post {
     margin-bottom: 70px;
 }
 
-.post h1 a, .post h1 a:visited {
+.post p:not(.date){
+    padding: 15px;
+    border: 3px #11b6fb solid;
+    border-radius: 20px;
+    box-shadow: 0 0 10px black;
+    background: #ffffff;
+}
+
+
+.post h1, .post h1 a:visited {
     color: #000000;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
 }
 
 .comment {
-    margin: 20px 0px 0px 20px;
+    margin: 20px 0px 0px 0px;
 }
+
+.comment a:first-child{
+    border: 2px black solid;
+}
+
+
+
+
+
