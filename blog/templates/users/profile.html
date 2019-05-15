@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <p>{{ user.username }}</p>
+    <p>{{ user_profile.username }}</p>
     {% for post in posts reversed %}
 
         <div class="post">

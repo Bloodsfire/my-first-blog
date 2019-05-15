@@ -114,7 +114,7 @@ def register(request):
 
 
 def profile(request, username):
-    user = get_object_or_404(User, username=username)
-    posts = Post.objects.filter(published_date__lte=timezone.now(), author=user.id).order_by('published_date')
-    return render(request, 'users/profile.html', {'user': user, 'posts': posts})
+    user_profile = get_object_or_404(User, username=username)
+    posts = Post.objects.filter(published_date__lte=timezone.now(), author=user_profile.id).order_by('published_date')
+    return render(request, 'users/profile.html', {'user_prof': user_profile, 'posts': posts})
 

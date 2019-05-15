@@ -4,7 +4,7 @@
     {% for post in posts reversed%}
         <div class="post">
             <div class="author">
-                {{ post.author }}
+                <a href="{% url 'profile' username=post.author %}">{{ post.author }}</a>
             </div>
             <div class="date">
                 {{ post.published_date }}
