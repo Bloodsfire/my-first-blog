@@ -16,7 +16,9 @@ body {
 }
 
 .content {
-    margin-left: 40px;
+    /* margin-left: 25%;*/
+    width: 60%;
+
 }
 
 h1, h2, h3, h4 {
@@ -25,9 +27,9 @@ h1, h2, h3, h4 {
 
 .date {
     color: #4c4c4c;
-    text-align: right;
-    display: inline-block;
-    width: 100%;
+    /* text-align: left;
+     display: inline-block;
+     width: 100%; */
 
 }
 
@@ -47,15 +49,15 @@ h1, h2, h3, h4 {
     padding-top: 25px;
 }
 
-.top-menu a, .glyphicon-remove {
+.glyphicon-log-out, .glyphicon-remove {
     color: #ed0006;
 }
 
-.glyphicon-plus, .glyphicon-ok, .glyphicon-lock {
+.glyphicon-plus, .glyphicon-ok, .glyphicon-log-in {
     color: #7be211;
 }
 
-.glyphicon-edit, .glyphicon-pencil {
+.glyphicon-edit, .glyphicon-pencil, .glyphicon-plus-sign{
     color: #ff9a06;
 }
 
@@ -86,6 +88,7 @@ h1, h2, h3, h4 {
 .comment a:first-child{
     border: 2px black solid;
 }
+
 
 
 
