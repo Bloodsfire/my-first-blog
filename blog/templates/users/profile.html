@@ -1,7 +1,9 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    {% for post in posts reversed%}
+    <p>{{ user.username }}</p>
+    {% for post in posts reversed %}
+
         <div class="post">
             <div class="author">
                 {{ post.author }}
@@ -15,6 +17,6 @@
             <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
             <hr>
         </div>
-    {% endfor %}
 
+    {% endfor %}
 {% endblock %}

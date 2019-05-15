@@ -1,12 +1,13 @@
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404, redirect
 
-from .models import Post, Comment
+from .models import Post, Comment# UserProfile
 from .forms import PostForm, CommentForm
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import views
+
+from django.contrib.auth.models import User
 
 
 
@@ -106,8 +107,14 @@ def register(request):
         if form.is_valid():
             form.save()
             return redirect('/accounts/login/')
-
     else:
         form = UserCreationForm()
 
     return render(request, 'registration/register.html', {'form': form})
+
+
+def profile(request, username):
+    user = get_object_or_404(User, username=username)
+    posts = Post.objects.filter(published_date__lte=timezone.now(), author=user.id).order_by('published_date')
+    return render(request, 'users/profile.html', {'user': user, 'posts': posts})
+
