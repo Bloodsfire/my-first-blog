@@ -1,7 +1,7 @@
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404, redirect
 
-from .models import Post, Comment# UserProfile
+from .models import Post, Comment
 from .forms import PostForm, CommentForm
 
 from django.contrib.auth.decorators import login_required
@@ -116,5 +116,5 @@ def register(request):
 def profile(request, username):
     user_profile = get_object_or_404(User, username=username)
     posts = Post.objects.filter(published_date__lte=timezone.now(), author=user_profile.id).order_by('published_date')
-    return render(request, 'users/profile.html', {'user_prof': user_profile, 'posts': posts})
+    return render(request, 'users/profile.html', {'user_profile': user_profile, 'posts': posts})
 

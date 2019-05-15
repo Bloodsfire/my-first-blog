@@ -3,9 +3,7 @@
 {% block content %}
     {% for post in posts reversed%}
         <div class="post">
-            <div class="author">
-                <a href="{% url 'profile' username=post.author %}">{{ post.author }}</a>
-            </div>
+            <a href="{% url 'profile' username=post.author %}" class="author">{{ post.author }}</a>
             <div class="date">
                 {{ post.published_date }}
             </div>

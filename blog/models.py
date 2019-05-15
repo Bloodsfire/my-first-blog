@@ -1,7 +1,6 @@
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
-from django.contrib.auth.models import User
 
 
 class Post(models.Model):
@@ -36,8 +35,4 @@ class Comment(models.Model):
     def __str__(self):
         return self.text
 
-'''
-class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    user_info = models.CharField(max_length=50, default=5)
-'''
+

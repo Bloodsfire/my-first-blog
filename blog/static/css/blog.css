@@ -15,6 +15,10 @@ body {
     text-decoration: none;
 }
 
+.logged_user, .logged_user:visited{
+    color: #ffffff;
+}
+
 .content {
     /* margin-left: 25%;*/
     width: 60%;
@@ -32,9 +36,20 @@ h1, h2, h3, h4 {
      width: 100%; */
 }
 
-.author{
+.author, .author:visited{
+    color: black;
     font-weight: bold;
     font-size: 17px;
+}
+
+.profile_name {
+    font-size: 40px;
+    text-align: center;
+}
+
+.profile_info {
+    text-align: center;
+    margin-bottom: 100px;
 }
 
 .save {
@@ -92,6 +107,8 @@ h1, h2, h3, h4 {
 .comment a:first-child{
     border: 2px black solid;
 }
+
+
 
 
 
