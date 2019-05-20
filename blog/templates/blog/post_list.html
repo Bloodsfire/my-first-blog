@@ -15,7 +15,7 @@
                 <a class="btn btn-success" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
             {% endif %}
             <h1 class="card-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p class="card-text" style="text-align: left">{{ post.text|linebreaksbr }}</p>
+            <p class="card-text" style="text-align: left">{{ post.text|linebreaksbr|truncatechars:300 }}</p>
 
         </div>
             <img src="https://sales-generator.ru/upload/resize_cache/iblock/a25/790_395_2/a25a3acb282e9b49fa337cf8269a21ba.jpg" class="img-fluid" alt="...">
