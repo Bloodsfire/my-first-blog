@@ -2,17 +2,26 @@
 
 {% block content %}
     {% for post in posts reversed%}
-        <div class="post">
-            <a href="{% url 'profile' username=post.author %}" class="author">{{ post.author }}</a>
-            <div class="date">
-                {{ post.published_date }}
+        <div class="card" style="margin-top: 20px">
+        <div class="card-body">
+            <div class="author">
+                <a href="{% url 'profile' username=post.author %}" class="author">{{ post.author }}</a>
             </div>
+            {% if post.published_date %}
+                <div class="date">
+                    {{ post.published_date }}
+                </div>
+            {% else %}
+                <a class="btn btn-success" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
+            {% endif %}
+            <h1 class="card-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p class="card-text" style="text-align: left">{{ post.text|linebreaksbr }}</p>
 
-            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaksbr }}</p>
-            <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
-            <hr>
         </div>
+            <img src="https://sales-generator.ru/upload/resize_cache/iblock/a25/790_395_2/a25a3acb282e9b49fa337cf8269a21ba.jpg" class="img-fluid" alt="...">
+            <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
+        </div>
+
     {% endfor %}
 
 {% endblock %}

@@ -3,12 +3,26 @@
 {% block content %}
     {% for post in posts %}
     {% if post.author_id == user.id %}
-        <div class="post">
-            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p>{{ post.text|truncatechars:200 }}</p>
-            <p class="date">created: {{ post.created_date|date:'d-m-Y' }}</p>
-            <hr>
+    <div class="card" style="margin-top: 20px">
+        <div class="card-body">
+             <div class="date">
+                 <a>created: {{ post.created_date|date:'d-m-Y' }}</a>
+                {% if user.is_authenticated and post.author_id == user.id %}
+                <a class="post-edit" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+                <a class="post-edit" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+                 {% endif %}
+             </div>
+            {% if post.published_date %}
+                <div class="date">
+                    {{ post.published_date }}
+                </div>
+            {% endif %}
+            <h1 class="card-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p class="card-text">{{ post.text|linebreaksbr }}</p>
+
         </div>
+        <img src="https://sales-generator.ru/upload/resize_cache/iblock/a25/790_395_2/a25a3acb282e9b49fa337cf8269a21ba.jpg" class="img-fluid" alt="...">
+    </div>
     {% endif %}
     {% endfor %}
 {% endblock %}
